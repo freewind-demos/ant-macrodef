@@ -1,6 +1,22 @@
 <?xml version="1.0" ?>
 <project name="ant-demo" default="hello">
+
+	<macrodef name="hello">
+		<attribute name="to-name" />
+		<element name="my-task" optional="yes" />
+		<sequential>
+			<echo message="Hello, @{to-name}" />
+			<my-task />
+		</sequential>
+	</macrodef>
+
 	<target name="hello">
-		<echo message="Hello ant!" />
+		<hello to-name="java" />
+		<hello to-name="ant">
+			<my-task>
+				<echo message="ant's task" />
+			</my-task>
+		</hello>
 	</target>
+
 </project>

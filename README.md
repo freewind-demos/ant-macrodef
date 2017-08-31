@@ -1,5 +1,7 @@
-Ant Demo
-========
+Ant Macrodef Demo
+=================
+
+How to define a task in ant.
 
 ```
 brew install ant
@@ -17,13 +19,6 @@ or
 ant hello
 ```
 
-You will see:
+Use `attribute` and `element` to define custom attribute and inner operations.
 
-```
-
-hello:
-     [echo] Hello ant!
-
-BUILD SUCCESSFUL
-Total time: 0 seconds
-```
+Notice use `@{}` instead of `${}` to use attributes.
